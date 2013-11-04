@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!--
+
+HOW TO CREATE A CSS3 DROPDOWN MENU [TUTORIAL]
+
+"How to create a CSS3 Dropdown Menu [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com
+http://vladimirkudinov.com
+
+-->
+
+<html lang="en" manifest="example.appcache">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Page Action</title>
+
+	<link rel="stylesheet" href="pageAction.css" media="screen">
+	<script type="text/javascript" src="../helpers.js"></script>
+	<script type="text/javascript" src="pageAction.js"></script>
+	<style type="text/css">
+		html, body { margin: 0;	padding: 0; }
+	</style>
+</head>
+
+<body>
+
+<ul class="menu">
+
+	<li class="submenu"><a>Options</a>
+		<ul class="options-menu">
+			<li><a href="./options/codemirror/codemirror.html" >Code Mirror</a></li>
+			<li><a href="./options/beautify/beautify.html" >Beautify</a></li>
+		</ul>
+	</li>
+	<li class="submenu"><a>Tools</a>
+		<ul class="tools-menu">
+			<li><a href="./tools/bookmarklet/bookmarklet.html" >Bookmarklet Creator</a></li>
+			<li><a href="./tools/insertFile/insertFile.html" class="messages">Insert DataUrl</a></li>
+			<li><a href="./tools/converter/converter.html" class="signout">Dec/Hex/Bin Converter</a></li>
+			<li><a href="./tools/keyCodes/keyCodes.html" class="signout">Key Codes</a></li>
+			<!-- <li><a href="element://#element">Element</a></li> -->
+		</ul>
+	</li>
+
+	<li><a href="./about/about.html">About</a></li>
+
+</ul> <!-- end .menu -->
+
+	<div class="tab-frame" id="framescontainer">
+		<iframe id="tab1" src="about:blank" seamless="true"></iframe>
+		<iframe id="tab2" src="about:blank" seamless="true"></iframe>
+	</div>
+<!-- 	<div class="tab" id="element">
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+something<br><br><br><br><br><br><br><br>
+	</div> -->
+</body>
+
+</html>

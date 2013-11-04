@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset=utf-8 />
+    <title>Bookmarklet Creator</title>
+    <script type="text/javascript" src="../../../helpers.js"></script>
+    <script type="text/javascript" src="../options.js"></script>
+    <script type="text/javascript" src="beautify.js"></script>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.css" type="text/css">
+	  <script type="text/javascript" src="../../bootstrap/jquery.js"></script>
+	  <script type="text/javascript" src="../../bootstrap/bootstrap.js"></script>
+	  <link rel="stylesheet" href="../../tools/tools.css" type="text/css">
+	  <style>
+	  	body,html{overflow:hidden;}
+      html{margin-top: 10px;}
+	  </style>
+  </head>
+  
+  <body class="unselectable pointer-default">
+  	<div class="heading">
+  	<strong class="pointer-default">Beautifier
+            <a href="https://github.com/einars/js-beautify/" style="float:right" target="_blank"  title="Help">?</a>
+          </strong>
+  	</div>
+  	
+<div class="content indent">
+         <!-- Tab - Options - Beautifiesr -->
+        <ul id="beautifierTabs" class="nav nav-pills pills-small">
+          <li>
+           <a href="#beautifierJS" data-toggle="tab" >JavaScript</a>
+          </li>
+          <li>
+           <a href="#beautifierHTML" data-toggle="tab">HTML</a>
+          </li>
+          <li>
+           <a href="#beautifierCSS" data-toggle="tab">CSS</a>
+          </li>
+        </ul>
+         <!-- <br class="br-medium"> -->
+         <div id="beautifierTabsContent" class="tab-content tab-beautify">
+          <!-- Tab - Options - Beautifier - Tabs -->
+          <div class="tab-pane fade" id="beautifierJS">
+           <!-- Tab - Options - Beautifier - Javascript -->
+           <form class="form-inline">
+                        
+            <!-- Brace Style -->
+            <div class="hover">
+               <label class="span4 strong"><b>Brace Style</b></label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.javascript.brace_style" name="beautify_brace-style" id="braceRadios1" value="collapse" checked=""> collapse</label>
+               <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.javascript.brace_style" name="beautify_brace-style" id="braceRadios2" value="expand"> expand</label><br>
+               <label class="radio">
+                <input type="radio" data-options_path="PAEz.beautify.javascript.brace_style" name="beautify_brace-style" id="braceRadios3" value="end-expand"> end-expand</label> <label class="radio">
+                <input type="radio" data-options_path="PAEz.beautify.javascript.brace_style" name="beautify_brace-style" id="braceRadios4" value="expand-strict"> expand-strict</label>
+            </div><br>
+
+            <!-- Indent Size -->
+            <div class="hover">
+               <label class="span4"><b>Indent Size</b></label> <input type="number" data-options_path="PAEz.beautify.javascript.indent_size" class="input-small span3" placeholder="">
+            </div><br>
+
+            <!-- Indent Type -->
+            <div class="hover">
+               <label class="span4"><b>Indent Type</b></label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.javascript.indent_char" name="beautify_indent-char" id="indentRadios1" value="&#09;" checked=""> Tab</label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.javascript.indent_char" name="beautify_indent-char" id="indentRadios2" value=" "> Space</label>
+            </div><br>
+
+            <!-- Preserve New Lines -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>Preserve New Lines</b></label> <input data-options_path="PAEz.beautify.javascript.preserve_newlines" type="checkbox" value=""></label>
+            </div><br>
+
+            <!-- Preserve Lines Maximum -->
+            <div class="hover" title="Maximum Lines to Preserve&#10 0 for Infinite">
+               <label class="span4"><b>Preserve New Lines Maximum</b></label> <input type="number" data-options_path="PAEz.beautify.javascript.max_preserve_newlines" class="input-small span3" placeholder="">
+            </div><br>
+
+            <!-- Keep Array Indentation -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>Keep Array Indentation</b></label> <input data-options_path="PAEz.beautify.javascript.keep_array_indentation" type="checkbox" value=""></label>
+            </div><br>
+
+            <!-- Space before Conditional -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>Space Before Conditional</b></label> <input data-options_path="PAEz.beautify.javascript.space_before_conditional" type="checkbox" value=""></label>
+            </div>
+            <br>
+
+            <!-- Wrap Line Length -->
+            <div class="hover" title="Wrap Lines at this Length&#10 0 for Infinite">
+               <label class="span4"><b>Wrap Line Length</b></label> <input type="number" data-options_path="PAEz.beautify.javascript.wrap_line_length" class="input-small span3" placeholder="">
+            </div><br>
+
+             <!-- Unescape Strings -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>Unescape<br>Strings</b></label> <input data-options_path="PAEz.beautify.javascript.unescape_strings" type="checkbox" value=""></label>
+            </div>
+            <br>
+
+            <!-- Break Chained Methods -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>Break Chained Methods</b></label> <input data-options_path="PAEz.beautify.javascript.break_chained_methods" type="checkbox" value=""></label>
+            </div>
+            <br>
+
+            <!-- JsLint Happy -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>JsLint Happy</b></label> <input data-options_path="PAEz.beautify.javascript.jslint_happy" type="checkbox" value=""></label>
+            </div>
+            <br>
+
+            <!-- Space in Paren -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>Space in Paren</b></label> <input data-options_path="PAEz.beautify.javascript.space_in_paren" type="checkbox" value=""></label>
+            </div>
+            <br>
+
+            <!-- E4X -->
+            <div class="hover">
+               <label><label class="checkbox span4"><b>E4X</b></label> <input data-options_path="PAEz.beautify.javascript.e4x" type="checkbox" value=""></label>
+            </div>
+            <br>
+            <!-- </div> -->
+           </form>
+          </div><!-- /Tab - Options - Beautifier - Javascript -->
+          
+          <div class="tab-pane fade" id="beautifierHTML"><!-- Tab - Options - Beautifier - HTML -->
+           <form class="form-inline">                        
+            <!-- Brace Style -->
+            <div class="hover">
+               <label class="span4 strong"><b>Brace Style</b></label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.html.brace_style" name="beautify_html_brace-style" id="braceRadios1" value="collapse" checked=""> collapse</label>
+               <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.html.brace_style" name="beautify_html_brace-style" id="braceRadios2" value="expand"> expand</label><br>
+               <label class="radio">
+                <input type="radio" data-options_path="PAEz.beautify.html.brace_style" name="beautify_html_brace-style" id="braceRadios3" value="end-expand"> end-expand</label> <label class="radio">
+                <input type="radio" data-options_path="PAEz.beautify.html.brace_style" name="beautify_html_brace-style" id="braceRadios4" value="expand-strict"> expand-strict</label>
+            </div><br>
+
+            <!-- Indent Size -->
+            <div class="hover">
+               <label class="span4"><b>Indent Size</b></label> <input type="number" data-options_path="PAEz.beautify.html.indent_size" class="input-small span3" placeholder="">
+            </div><br>
+
+            <!-- Indent Type -->
+            <div class="hover">
+               <label class="span4"><b>Indent Type</b></label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.html.indent_char" name="beautify_html_indent-char" id="indentRadios1" value="&#09;" checked=""> Tab</label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.html.indent_char" name="beautify_html_indent-char" id="indentRadios2" value=" "> Space</label>
+            </div><br>
+
+            <!-- Max Characters -->
+            <div class="hover" title="Max Characters&#10 0 for Infinite">
+               <label class="span4"><b>Max Characters</b></label> <input type="number" data-options_path="PAEz.beautify.html.max_char" class="input-small span3" placeholder="">
+            </div><br>
+
+            <!-- Indent Scripts -->
+            <div class="hover">
+               <label class="span4 strong"><b>Indent Scripts</b></label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.html.indent_scripts" name="beautify_html_indent-scripts" id="braceRadios1" value="normal" checked=""> normal</label>
+               <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.html.indent_scripts" name="beautify_html_indent-scripts" id="braceRadios2" value="keep"> keep</label><br>
+               <label class="radio">
+                <input type="radio" data-options_path="PAEz.beautify.html.indent_scripts" name="beautify_html_indent-scripts" id="braceRadios3" value="seperate"> seperate</label>
+            </div><br>
+
+            <!-- Unformatted -->
+            <div class="hover">
+               <label class="span4"><b>Unformatted Tags</b></label> <textarea style="max-width:300px;" name="textarea" rows="7" class="span7" data-options_type="array" data-options_throttle="200" data-options_path="PAEz.beautify.html.unformatted">Write something here</textarea>
+            </div><br>
+            <!-- </div> -->
+           </form>
+          </div><!-- /Tab - Options - Beautifier - HTML -->
+          
+          <div class="tab-pane fade" id="beautifierCSS"><!-- Tab - Options - Beautifier - CSS -->
+           <form class="form-inline">                        
+            <!-- Indent Size -->
+            <div class="hover">
+               <label class="span4"><b>Indent Size</b></label> <input type="number" data-options_path="PAEz.beautify.css.indent_size" class="input-small span3" placeholder="">
+            </div><br>
+
+            <!-- Indent Type -->
+            <div class="hover">
+               <label class="span4"><b>Indent Type</b></label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.css.indent_char" name="beautify_css_indent-char" id="indentRadios1" value="&#09;" checked=""> Tab</label> <label class="radio">
+               <input type="radio" data-options_path="PAEz.beautify.css.indent_char" name="beautify_css_indent-char" id="indentRadios2" value=" "> Space</label>
+            </div><br>
+           </form>
+          </div><!-- /Tab - Options - Beautifier - CSS -->
+          
+         </div>
+</div>
+  </body>
+
+</html>

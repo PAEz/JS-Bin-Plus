@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset=utf-8 />
+    <title>Bin/Hex/Decimal Converter</title>
+    <script type="text/javascript" src="../../../helpers.js"></script>
+    <script type="text/javascript" src="keyCodes.js"></script>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.css" type="text/css">
+	  <script type="text/javascript" src="../../bootstrap/jquery.js"></script>
+	  <script type="text/javascript" src="../../bootstrap/bootstrap.js"></script>
+	  <link rel="stylesheet" href="../tools.css" type="text/css">
+	  <style>
+	  	body,html{/*overflow:hidden;*/}
+	  </style>
+  </head>
+  
+  <body class="unselectable">
+  	<div class="heading">
+  	<strong class="pointer-default">Key Codes</strong>
+  	</div><br>
+  	
+<div class='content'>
+<div class="hover">
+      <label class="span4"><b>Char</b></label> <input class="span5" placeholder="" id="char">
+    </div><br>
+    <div class="hover">
+      <label class="span4"><b>Key Code</b></label> <input class="span5" placeholder="" id="keycode">
+    </div><br>
+    <div class="hover">
+      <label class="span4"><b>With other keys</b></label> <input class="span5" placeholder="" id="full">
+    </div><br> 
+    <ul id="beautifierTabs" style="color:#00598B;" class="pill-list-small">
+          <li id="altKey">
+           Alt
+          </li>
+          <li id="ctrlKey">
+           Ctrl
+          </li>
+          <li id="metaKey">
+           Meta
+          </li>
+          <li id="shiftKey">
+           Shift
+          </li>
+    </ul>
+<span style="font-size:small;">    
+    <b>Directions</b>
+    <br>
+    Click on this window to activate it, then press the keys your interested in.
+    <br>
+<!-- <b>Info</b>
+
+<br>
+These key codes are captured on the key down event, the type of event can have a difference apparently.
+
+I have little experience with handling key events, so if Im missing something I'm sorry.
+
+If you feel you could make a better version of this then please send it to me and I'd be more than happy to replace this. -->
+</span>
+  </div>
+  </body>
+
+</html>

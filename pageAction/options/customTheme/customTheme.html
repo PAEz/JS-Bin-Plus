@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset=utf-8 />
+    <title>Bookmarklet Creator</title>
+    <script type="text/javascript" src="../../../helpers.js"></script>
+    <script type="text/javascript" src="../options.js"></script>
+    <script type="text/javascript" src="customTheme.js"></script>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.css" type="text/css">
+	  <script type="text/javascript" src="../../bootstrap/jquery.js"></script>
+	  <script type="text/javascript" src="../../bootstrap/bootstrap.js"></script>
+	  <link rel="stylesheet" href="../../tools/tools.css" type="text/css">
+    <script type="text/javascript" src="jss.js"></script>
+    <script type="text/javascript" src="css-parse.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+	  <style>
+	  	body,html{overflow:hidden;}
+      html{margin-top: 10px;}
+	  </style>
+  </head>
+  
+  <body class="unselectable pointer-default">
+  	<div class="heading">
+  	<strong class="pointer-default">Custom Theme Colours
+            <a href="http://codemirror.net/doc/manual.html#config" style="float:right" target="_blank"  title="Help">?</a>
+          </strong>
+  	</div>
+  	
+<div class="content indent">
+         <form class="form-inline tab-options-content">
+          <div class="hover">
+           <label class="span5"><b>Theme</b></label>
+           <select data-options_path="editor.theme" data-options_reload class="span6" title='Requires Reload'>
+            <option value="default">Default</option>
+            <option value="ambiance">Ambiance</option>
+            <option value="blackboard">Blackboard</option>
+            <option value="cobalt">Cobalt</option>
+            <option value="elegant">Elegant</option>
+            <option value="erlang-dark">Erlang-Dark</option>
+            <option value="lesser-dark">Lesser-Dark</option>
+            <option value="monokai">Monokai</option>
+            <option value="neat">Neat</option>
+            <option value="night">Night</option>
+            <option value="rubyblue">RubyBlue</option>
+            <option value="solarized">Solarized</option>
+            <option value="twilight">Twilight</option>
+            <option value="vibrant-ink">Vibrant-Ink</option>
+            <option value="xq-dark">Xq-Dark</option>
+           </select>
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Tab Size</b></label> <input type="number" data-options_path="editor.tabSize" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Indent with Tabs</b></label> <input data-options_path="editor.indentWithTabs" type="checkbox" value=""></label>
+          </div><br>
+          
+          <div class="hover">
+           <label class="span5"><b>Indent Unit</b></label> <input type="number" data-options_path="editor.indentUnit" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Smart Indent</b></label> <input data-options_path="editor.smartIndent" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Electric Chars</b></label> <input data-options_path="editor.electricChars" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Style Active Line</b></label> <input data-options_path="editor.styleActiveLine" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Match Brackets</b></label> <input data-options_path="editor.matchBrackets" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Auto Matching Brackets</b></label> <input data-options_path="PAEz.editor.autoCloseBrackets" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>First Line Number</b></label> <input type="number" data-options_path="editor.firstLineNumber" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Line Numbers</b></label> <input data-options_path="editor.lineNumbers" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Line Wrapping</b></label> <input data-options_path="editor.lineWrapping" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Fixed Gutter</b></label> <input data-options_path="editor.fixedGutter" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>RTL Move Visually</b></label> <input data-options_path="editor.rtlMoveVisually" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Show Cursor When Selecting</b></label> <input data-options_path="editor.showCursorWhenSelecting" type="checkbox" value=""></label>
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Cursor Blink Rate</b></label> <input type="number" data-options_path="editor.cursorBlinkRate" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Cursor Height</b></label> <input type="number" data-options_path="editor.cursorHeight" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Undo Depth</b></label> <input type="number" data-options_path="editor.undoDepth" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Work Time</b></label> <input type="number" data-options_path="editor.workTime" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Work Delay</b></label> <input type="number" data-options_path="editor.workDelay" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label class="span5"><b>Poll Interval</b></label> <input type="number" data-options_path="editor.pollInterval" class="span3" placeholder="">
+          </div><br>
+
+          <div class="hover">
+           <label><label class="checkbox span5"><b>Flatten Spans</b></label> <input data-options_path="editor.flattenSpans" type="checkbox" value=""></label>
+          </div><br>
+
+          <!-- <button class="bottom-btn btn btn-info span8 offset1" type="button">Apply and Save</button> -->
+         </form>
+</div>
+  </body>
+
+</html>

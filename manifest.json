@@ -1,0 +1,35 @@
+{
+   "background": {
+      "scripts": [ "background.js" ],
+    "persistent": true
+   },
+     "page_action": {
+    "default_icon": "icon19.png",
+    "default_title": "JS Bin+",
+    "default_popup": "pageAction/pageAction.html"
+  },
+   "content_scripts": [ {
+    "run_at" : "document_start",
+      "js": [ "helpers.js","jsbinContent.js" ],
+      "css" :["libs/spectrum.css"],
+      "matches": [ "*://jsbin.com/*" ]
+   }
+
+    ],
+   "description": "Some love for JS Bin, from PAEz",
+   "icons": {
+      "128": "icon_128.png",
+      "16": "icon_16.png",
+      "48": "icon_48.png"
+   },
+   "manifest_version": 2,
+   "name": "JS Bin+",
+   "permissions": [ "contextMenus", "tabs", "http://jsbin.com/", "storage", "webNavigation", "bookmarks","http://jsoneditoronline.org/" ],
+   "version": "0.1",
+   "web_accessible_resources": [
+   "helpers.js", "injectedCode.js", "beautify/unpackers/javascriptobfuscator_unpacker.js","beautify/unpackers/myobfuscate_unpacker.js","beautify/unpackers/p_a_c_k_e_r_unpacker.js","beautify/unpackers/urlencode_unpacker.js","beautify/beautify.js", "beautify/beautify-css.js", "beautify/beautify-html.js",
+    "CodeMirrorAddons/closebrackets.js",/*"CodeMirrorAddons/matchbrackets.js","libs/tinycolor.js",*/
+     "/bootstrap/jquery.js",
+     "libs/spectrum.js","libs/spectrum.css"
+   ]
+}

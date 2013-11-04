@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset=utf-8 />
+    <title>Bookmarklet Creator</title>
+    <script type="text/javascript" src="../../../helpers.js"></script>
+    <script type="text/javascript" src="bookmarklet.js"></script>
+    <script type="text/javascript" src="bookmarkleter.js"></script>
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.css" type="text/css">
+	  <script type="text/javascript" src="../../bootstrap/jquery.js"></script>
+	  <script type="text/javascript" src="../../bootstrap/bootstrap.js"></script>
+	  <link rel="stylesheet" href="../tools.css" type="text/css">
+	  <style>
+	  	body,html{/*overflow:hidden;*/}
+	  </style>
+  </head>
+  
+  <body class="unselectable">
+  	<div class="heading">
+  	<strong class="pointer-default">Bookmarklet Creator</strong>
+  	</div><br>
+  	
+<div class="content">
+
+    <div class="hover">
+        <label class="span4"><b>Title</b></label> <input class="span7" type="text" placeholder="Enter title to create bookmarklet..." id="title">
+    </div>
+     <div class="hover">
+        <label class="span4"><b>Bookmarklet</b></label> <a href="#" title="Drag to you bookmarks bar" id="bookmarklet" class="span5" style="margin-left: 0px;"></a>
+    
+    </div>
+    <br>
+    <br>
+    <div>
+    <button style="padding-left:15px;padding-right:15px;float:left;" class="span" disabled id="update" title="Update last added Bookmarklet">Update</button>
+  </div>
+    <br>
+    <br>
+    		<b>Features</b>
+		<ul>
+
+			<li>Removes newlines, tabs, optional spaces, and comments</li>
+			<li>URL-encodes special ASCII characters: [space], %, &quot;, &lt;, &gt;, #, @, &amp;, ?</li>
+			<li>Places code in a wrapper function (if not done already)</li>
+			<li>Does not hex-encode non-ASCII characters (you should probably use <a href="http://www.w3schools.com/jsref/jsref_fromcharcode.asp" target="_blank">String.fromCharCode</a> for that)</li>
+			<li>Only converts the JS, does not include css or html in any way</li>
+
+		</ul>
+
+	<b> About </b>
+	<br/>
+	<small>
+		Uses code by <a href="https://github.com/chriszarate" target="_blank"> Chris Zarate </a>
+	</small>
+
+  </div>
+  </body>
+
+</html>
