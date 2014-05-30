@@ -336,7 +336,8 @@ _PAEz.removeLineNumbers = function(message) {
       for (var i = start; i < end; i++) {
         text = editor.getLine(i);
         text = text.replace(/^[0-9]*/,'');
-        editor.setLine(i,text);
+        editor.replaceRange(text,{line: i, ch: 0}, {line: i});
+        //editor.setLine(i,text);
       }
     }
   });
@@ -357,9 +358,11 @@ _PAEz.endLinesSlash = function(message) {
         var text = editor.getLine(i);
         if (text[text.length - 1] == '\\') {
           text = text.substring(0, text.length - 1);
-          editor.setLine(i, text);
+          editor.replaceRange(text,{line: i, ch: 0}, {line: i});
+          // editor.setLine(i, text);
         } else {
-          editor.setLine(i, text + '\\');
+          editor.replaceRange(text+'\\',{line: i, ch: 0}, {line: i});
+          // editor.setLine(i, text + '\\');
         }
       }
     });
@@ -378,10 +381,12 @@ _PAEz.linesToArray = function(message) {
       var end = editor.getCursor('end').line + 1;
       for (var i = start; i < end - 1; i++) {
         var text = editor.getLine(i);
-        editor.setLine(i, quote + text + quote + ',');
+        editor.replaceRange(quote + text + quote + ',',{line: i, ch: 0}, {line: i});
+        // editor.setLine(i, quote + text + quote + ',');
       }
       text = editor.getLine(i);
-      editor.setLine(i, quote + text + quote);
+      editor.replaceRange(quote + text + quote,{line: i, ch: 0}, {line: i});
+      // editor.setLine(i, quote + text + quote);
     });
   }
 }
@@ -426,7 +431,8 @@ _PAEz.collapseLines = function(message) {
       // for (var i = start+1; i < end+1; i++) {
       //   editor.removeLine(i);
       // }
-      editor.setLine(start, text);
+      editor.replaceRange(text,{line: start, ch: 0}, {line: start});
+      // editor.setLine(start, text);
     }
   });
 }
@@ -447,7 +453,8 @@ _PAEz.sortLines = function(message) {
       }
       lines.$naturalSort();
       for (var i = start, z = 0; i < end; i++) {
-        editor.setLine(i, lines[z++]);
+        editor.replaceRange(lines[z++],{line: i, ch: 0}, {line: i});
+        // editor.setLine(i, lines[z++]);
       }
       editor.setSelection({
         line: start,
@@ -530,7 +537,8 @@ _PAEz.semicolonEnter = function(message) {
     var line = editor.getLine(pos.line);
     var length = line.length;
     if (line[length - 1] != ';') {
-      editor.setLine(pos.line, line + ';');
+      editor.replaceRange(line + ';',{line: pos.line, ch: 0}, {line: pos.line});
+      // editor.setLine(pos.line, line + ';');
       length += 1;
     }
     pos.ch = length;
@@ -553,7 +561,8 @@ _PAEz.addSemicolon = function(message) {
     var line = editor.getLine(pos.line);
     var length = line.length;
     if (line[length - 1] != ';') {
-      editor.setLine(pos.line, line + ';');
+      editor.replaceRange(line + ';',{line: pos.line, ch: 0}, {line: pos.line});
+      // editor.setLine(pos.line, line + ';');
       pos.ch = length;
     } else pos.ch = length - 1;
     editor.setCursor(pos);
@@ -643,7 +652,8 @@ _PAEz.cssHexChanger = function(modifier, a) {
             result += color;
             pos += numLength;
           }
-          a.setLine(cursor.line, strReplaceAt(str, start + 1, result));
+          a.replaceRange(strReplaceAt(str, start + 1, result),{line: cursor.line, ch: 0}, {line: cursor.line});
+          // a.setLine(cursor.line, strReplaceAt(str, start + 1, result));
           a.setCursor(cursor);
           return
         } else {
@@ -653,7 +663,8 @@ _PAEz.cssHexChanger = function(modifier, a) {
           else if (color < 0) color = 0;
           color = color.toString(16);
           if (numLength != color.length) color = '0' + color;
-          a.setLine(cursor.line, strReplaceAt(str, start + diff, color));
+          a.replaceRange(strReplaceAt( strReplaceAt(str, start + diff, color), start + 1, result),{line: cursor.line, ch: 0}, {line: cursor.line});
+          // a.setLine(cursor.line, strReplaceAt(str, start + diff, color));
           a.setCursor(cursor);
           return
         }
@@ -723,7 +734,8 @@ _PAEz.cssColorConverter = function(message) { //#(?:[0-9a-fA-F]{3}){1,2}|(?:rgb[
       if (pos) {
         var c = tinycolor(str.substr(pos.index, pos.length));
         if (c.ok) {
-          editor.setLine(cursor.line, strReplaceOver(str, c[message.details.func](), pos.index, pos.length));
+          editor.replaceRange(strReplaceOver(str, c[message.details.func](), pos.index, pos.length),{line: cursor.line, ch: 0}, {line: cursor.line});
+          // editor.setLine(cursor.line, strReplaceOver(str, c[message.details.func](), pos.index, pos.length));
           editor.setCursor(cursor);
         }
       } else return
@@ -808,7 +820,8 @@ _PAEz.colorPicker.getColor = function(color) {
 _PAEz.colorPicker.change = function(color) {
   var editor = jsbin.panels.panels[_PAEz.colorPicker.colorStr.panel].editor;
   var str = _PAEz.colorPicker.colorStr;
-  editor.setLine(str.line, str.prefix + _PAEz.colorPicker.getColor(color) + str.suffix);
+  editor.replaceRange(str.prefix + _PAEz.colorPicker.getColor(color) + str.suffix,{line: str.line, ch: 0}, {line: str.line});
+  // editor.setLine(str.line, str.prefix + _PAEz.colorPicker.getColor(color) + str.suffix);
 }
 
 
@@ -816,9 +829,11 @@ _PAEz.colorPicker.set = function(color) {
   var editor = jsbin.panels.panels[_PAEz.colorPicker.colorStr.panel].editor;
   var str = _PAEz.colorPicker.colorStr;
   editor.operation(function() {
-    editor.setLine(str.line, str.prefix + str.color + str.suffix);
+    editor.replaceRange(str.prefix + str.color + str.suffix,{line: str.line, ch: 0}, {line: str.line});
+    // editor.setLine(str.line, str.prefix + str.color + str.suffix);
     editor.setHistory(_PAEz.colorPicker.history);
-    editor.setLine(str.line, str.prefix + _PAEz.colorPicker.getColor(color) + str.suffix);
+    editor.replaceRange(str.prefix + _PAEz.colorPicker.getColor(color) + str.suffix,{line: str.line, ch: 0}, {line: str.line});
+    // editor.setLine(str.line, str.prefix + _PAEz.colorPicker.getColor(color) + str.suffix);
     editor.setCursor({
       line: str.line,
       ch: str.index
@@ -831,7 +846,8 @@ _PAEz.colorPicker.restore = function() {
   var editor = jsbin.panels.panels[_PAEz.colorPicker.colorStr.panel].editor;
   var str = _PAEz.colorPicker.colorStr;
   editor.operation(function() {
-    editor.setLine(str.line, str.prefix + str.color + str.suffix);
+    editor.replaceRange(str.prefix + str.color + str.suffix,{line: str.line, ch: 0}, {line: str.line});
+    // editor.setLine(str.line, str.prefix + str.color + str.suffix);
     editor.setHistory(_PAEz.colorPicker.history);
     editor.setCursor({
       line: str.line,
