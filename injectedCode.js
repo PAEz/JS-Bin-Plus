@@ -662,9 +662,8 @@ _PAEz.cssHexChanger = function(modifier, a) {
           if (color > clamp) color = clamp;
           else if (color < 0) color = 0;
           color = color.toString(16);
-          if (numLength != color.length) color = '0' + color;
-          a.replaceRange(strReplaceAt( strReplaceAt(str, start + diff, color), start + 1, result),{line: cursor.line, ch: 0}, {line: cursor.line});
-          // a.setLine(cursor.line, strReplaceAt(str, start + diff, color));
+          if (numLength != color.length) color = '0' + color;\
+          a.replaceRange(strReplaceAt(str, start + diff, color),{line: cursor.line, ch: 0}, {line: cursor.line});\
           a.setCursor(cursor);
           return
         }
